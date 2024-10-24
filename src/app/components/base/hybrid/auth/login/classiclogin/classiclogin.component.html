@@ -1,0 +1,42 @@
+<section class="bg-gray-100 flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+    <h1 class="text-2xl font-semibold text-center text-gray-800 mb-6 bg-white">Connexion</h1>
+    <form (ngSubmit)="processForm()" class="bg-white">
+      <div class="mb-4 bg-white">
+        <label class="block text-sm font-medium text-gray-700 bg-white" for="email">Email</label>
+        <input
+          [(ngModel)]="email"
+          class="bg-white mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          id="email"
+          name="email"
+          placeholder="votre-email@exemple.com"
+          type="email">
+      </div>
+      <div class="mb-6 bg-white">
+        <label class="bg-white block text-sm font-medium text-gray-700" for="password">Mot de passe</label>
+        <input
+          [(ngModel)]="password"
+          class="bg-white mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          id="password" name="password"
+          placeholder="Entrez votre mot de passe"
+          type="password">
+      </div>
+      <div class="flex items-center justify-between mb-6 bg-white">
+        <div class="flex items-center bg-white">
+          <input class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" id="remember-me"
+                 name="remember-me"
+                 type="checkbox">
+          <label class="bg-white ml-2 block text-sm text-gray-900" for="remember-me">
+            Se souvenir de moi
+          </label>
+        </div>
+        <a class="bg-white text-sm text-blue-custom-1" routerLink="/auth/forget">Mot de passe oublié?</a>
+      </div>
+      <button
+        class="w-full bg-blue-custom-1 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="submit">
+        Se connecter
+      </button>
+    </form>
+  </div>
+</section>

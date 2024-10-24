@@ -1,0 +1,14 @@
+<app-back link="/auth/login"></app-back>
+
+<div class="container mx-auto px-4">
+
+  <hr class="mt-6">
+  <p class="italic text-red-600">Erreur n° {{ this.errorService.getMicrosoftError() }}.</p>
+  <hr>
+
+  <p class="mt-6">Cette fonction n'est pas encore disponible car l'API de Microsoft est invalide.</p>
+
+  <p class="mt-6">Pour l’instant, vous pouvez vous connecter manuellement <a class="text-blue-custom-1"
+                                                                             routerLink="/auth/login/classic">ici</a> .
+  </p>
+</div>

@@ -1,0 +1,28 @@
+<app-back link="/courses"></app-back>
+
+<div class="container mx-auto px-4">
+
+  <div class="container px-2">
+    <div class="mt-10 grid grid-cols-1 gap-2 justify-center">
+      <a *ngFor="let course of courses"
+         [queryParams]="{classroom: course.numero_salle}"
+         class="bg-blue-custom-2 rounded-2xl p-6 w-full max-w-lg mx-auto shadow-md" routerLink="/tablet">
+        <div class="flex justify-between items-center bg-blue-custom-2">
+          <span class="text-xl font-bold text-blue-custom-1 bg-blue-custom-2">{{course.cours_nom}}</span>
+        </div>
+        <div class="flex flex-col space-y-2 mt-4 bg-blue-custom-2">
+          <span class="text-lg text-blue-custom-1 bg-blue-custom-2">
+            Prof: {{course.nom_prof}}
+            </span>
+          <span class="text-lg text-blue-custom-1 bg-blue-custom-2">
+            Salle: {{course.numero_salle}}
+          </span>
+          <span class="text-lg text-blue-custom-1 bg-blue-custom-2">
+            Heure de début: {{translateHour(course.horaire_cours)}}
+          </span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>

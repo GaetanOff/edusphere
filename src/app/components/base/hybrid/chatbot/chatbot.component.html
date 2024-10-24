@@ -1,0 +1,67 @@
+<app-back link=""></app-back>
+<div class="container mx-auto px-4">
+  <div class="flex flex-col space-y-4 mt-12 mb-24">
+
+    <div *ngFor="let conversation of conversations">
+      <div *ngIf="conversation.isBot else userMessage" class="flex items-start gap-2.5">
+        <div
+          class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-blue-custom-1 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+          <div class="flex items-center space-x-2 rtl:space-x-reverse bg-blue-custom-1">
+            <span class="text-sm font-semibold text-white bg-blue-custom-1">ChatBot IA</span>
+            <span class="text-sm font-normal text-white bg-blue-custom-1">{{ conversation.time }}</span>
+            <!-- Date dynamique si besoin -->
+          </div>
+          <p class="text-sm font-normal py-2.5 text-white bg-blue-custom-1">
+            {{ conversation.message }}
+          </p>
+          <span class="text-sm font-normal text-gray-500 bg-blue-custom-1">{{ conversation.status }}</span>
+        </div>
+      </div>
+      <ng-template #userMessage>
+        <div class="flex items-start gap-2.5 flex-row-reverse">
+          <div
+            class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-blue-custom-2 rounded-s-xl rounded-se-xl dark:bg-gray-700">
+            <div class="flex items-center space-x-2 rtl:space-x-reverse bg-blue-custom-2">
+              <span class="text-sm font-semibold text-gray-900 dark:text-white bg-blue-custom-2">Vous</span>
+              <span
+                class="text-sm font-normal text-gray-500 dark:text-gray-400 bg-blue-custom-2">{{ conversation.time }}</span>
+              <!-- Date dynamique si besoin -->
+            </div>
+            <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white bg-blue-custom-2">
+              {{ conversation.message }}
+            </p>
+            <span class="text-sm font-normal text-gray-500 bg-blue-custom-2">Envoyé</span>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+
+
+    <form (ngSubmit)="processForm()">
+      <div class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+          <label class="sr-only" for="message">Votre message</label>
+          <textarea #messageInput="ngModel"
+                    [(ngModel)]="message"
+                    [disabled]="isProcessing"
+                    class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                    id="message"
+                    name="message"
+                    placeholder="{{ isProcessing ? 'Attendez la réponse du bot...' : 'Ecrire un message...' }}" required
+                    rows="4"></textarea>
+        </div>
+        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+          <button
+            [disabled]="isProcessing"
+            class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-custom-1 rounded-lg focus:ring-4 focus:ring-blue-200"
+            name="submit" type="submit">
+            Envoyer le message
+          </button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,25 @@
+<div class="flex flex-col justify-between">
+
+  <div class="text-center mt-8">
+    <h2 class="text-xl font-semibold text-gray-700">
+      Bienvenue
+      <span class="text-blue-custom-1">{{ this.authService.getUsername() }}</span>
+      sur EduSphere !
+    </h2>
+    <p class="text-gray-500">Découvrez toutes nos fonctionnalités.</p>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4 px-4 mt-12">
+    <div
+      *ngFor="let button of buttons"
+      class="bg-orange-custom-1 text-white text-xl font-bold montserrat rounded-md h-24 flex items-center justify-center"
+      routerLink="{{button.redirect}}">
+      {{ button.label }}
+    </div>
+  </div>
+
+  <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-md text-center mt-4">
+    🎉 Découvrez nos nouvelles fonctionnalités dès maintenant !
+  </div>
+
+</div>

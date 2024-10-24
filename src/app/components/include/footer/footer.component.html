@@ -1,0 +1,12 @@
+<div *ngIf="authService.isUserLogged()"
+     class="fixed bottom-3 left-0 right-0 bg-white rounded-full h-[5rem] w-[26rem] mx-auto flex justify-around items-center">
+  <a class="bg-white" routerLink="">
+    <i class="bg-white fa-solid fa-house text-3xl"></i> <!-- text-3xl ajuste la taille de l'icône -->
+  </a>
+  <a class="bg-white" routerLink="/chatbot">
+    <i class="bg-white fa-solid fa-cloud text-3xl"></i> <!-- text-3xl ajuste la taille de l'icône -->
+  </a>
+  <a (click)="disconnect()" class="bg-white">
+    <i class="bg-white fa-solid fa-right-to-bracket text-3xl"></i> <!-- text-3xl pour l'autre icône -->
+  </a>
+</div>

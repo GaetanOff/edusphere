@@ -1,0 +1,20 @@
+<div (touchend)="onTouchEnd()"
+     (touchmove)="onTouchMove($event)"
+     (touchstart)="onTouchStart($event)"
+     class="container mx-auto px-4 min-h-screen">
+
+  <div class="bg-orange-custom-1 text-white montserrat font-bold text-2xl px-64 py-5 rounded-md text-center mb-4">
+    Liste des élèves
+  </div>
+
+
+  <div class="grid grid-cols-5 gap-6">
+    <a *ngFor="let student of students" class="bg-blue-custom-2 rounded-2xl p-6 w-full max-w-lg mx-auto shadow-md">
+      <div class="flex justify-between items-center bg-blue-custom-2">
+        <span class="text-md font-bold text-blue-custom-1 bg-blue-custom-2">
+          {{ student.name }} - <span class="bg-blue-custom-2 font-normal">{{ student.class }}</span>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>

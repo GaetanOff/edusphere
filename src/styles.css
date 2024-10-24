@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  background-color: #F5F5F5;
+}
+
+.bg-orange-custom-1 {
+  background-color: #EA5E40;
+}
+
+.bg-blue-custom-1 {
+  background-color: #005266;
+}
+
+.bg-blue-custom-2 {
+  background-color: #E6EEF0;
+}
+
+.text-blue-custom-1 {
+  color: #005266;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
